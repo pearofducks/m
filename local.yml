@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: localhost
 - tasks:
   - name: get gems
     gem: name=facter state=present executable=/usr/bin/gem
