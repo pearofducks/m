@@ -3,7 +3,7 @@
   connection: local
   tasks:
   - name: install gems
-    gem: name={{ item }} state=latest executable=/usr/bin/gem
+    gem: name={{ item }} state=latest
     with_items:
     - facter
     - keen
