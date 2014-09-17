@@ -5,8 +5,8 @@
   - name: install gems
     gem: name={{ item }} state=latest
     environment:
-    - GEM_HOME: /gorilla
-    - GEM_PATH: /gorilla
+      GEM_HOME: /gorilla
+      GEM_PATH: /gorilla
     with_items:
     - keen
     - dotenv
