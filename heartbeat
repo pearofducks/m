@@ -11,7 +11,7 @@ require "dotenv"
 # )
 
 facts = `ansible all -m setup -i localhost, -c local`
-f = File.open(Dir.home + "foo","w")
+f = File.open(Dir.home + "/foo","w")
 f.puts facts
 f.close
 
