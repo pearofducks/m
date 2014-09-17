@@ -4,6 +4,8 @@
   tasks:
   - name: install gems
     gem: name={{ item }} state=latest executable=/usr/bin/gem
+    environment:
+      gem_home: /gorilla
     with_items:
     - keen
     - dotenv
