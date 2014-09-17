@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  user: root
+  connection: local
+  tasks:
+  - name: install bundler
+    gem: name=bundler state=present executable=/usr/bin/gem
+  - name: bundle gems
+    shell: bundle install --binstubs --deployment --jobs 4 --path vendor/bundle
+    args:
+      chdir: /gorilla
+      creates: /gorilla/vendor
