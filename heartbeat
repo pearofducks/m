@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require "keen"
+require "dotenv"
+
+Dotenv.load
+
+k = Keen::Client.new(
+  project_id: ENV["PROJECT_ID"],
+  write_key: ENV["WRITE_KEY"],
+)
+
+k.publish( :mac,
+  {
+  var: value,
+  }
+)
