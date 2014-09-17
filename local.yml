@@ -8,6 +8,6 @@
     - keen
     - dotenv
   - name: copy heartbeat
-    copy: src=./heartbeat dest=/gorilla/heartbeat
+    copy: src=./heartbeat dest=/gorilla/heartbeat mode=0666
   - name: run heartbeat
     shell: /gorilla/heartbeat
