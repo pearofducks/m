@@ -3,7 +3,9 @@
   user: root
   connection: local
   tasks:
-  - name: get gems
+  - name: get facter
     gem: name=facter state=present executable=/usr/bin/gem
+  - name: get keen
     gem: name=keen state=present executable=/usr/bin/gem
+  - name: get dotenv
     gem: name=dotenv state=present executable=/usr/bin/gem
