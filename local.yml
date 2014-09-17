@@ -4,8 +4,8 @@
   connection: local
   tasks:
   - name: get facter
-    gem: name=facter state=present executable=/usr/bin/gem
+    gem: name=facter state=present executable=/usr/bin/gem user_install=no
   - name: get keen
-    gem: name=keen state=present executable=/usr/bin/gem
+    gem: name=keen state=present executable=/usr/bin/gem user_install=no
   - name: get dotenv
-    gem: name=dotenv state=present executable=/usr/bin/gem
+    gem: name=dotenv state=present executable=/usr/bin/gem user_install=no
