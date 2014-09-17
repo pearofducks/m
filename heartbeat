@@ -3,15 +3,20 @@
 require "keen"
 require "dotenv"
 
-Dotenv.load
+# Dotenv.load
 
-k = Keen::Client.new(
-  project_id: ENV["PROJECT_ID"],
-  write_key: ENV["WRITE_KEY"],
-)
+# k = Keen::Client.new(
+#   project_id: ENV["PROJECT_ID"],
+#   write_key: ENV["WRITE_KEY"],
+# )
 
-k.publish( :mac,
-  {
-  var: value,
-  }
-)
+facts = `ansible all -m setup -i localhost, -c local`
+f = File.open(Dir.home + "foo","w")
+f.puts facts
+f.close
+
+# k.publish( :mac,
+#   {
+#   var: value,
+#   }
+# )

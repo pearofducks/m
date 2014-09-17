@@ -1,12 +1,11 @@
 ---
 - hosts: localhost
   connection: local
-  sudo: yes
-  sudo_user: root
   tasks:
   - name: install gems
-    gem: name={{ item }} state=latest
+    gem: name={{ item }} state=latest executable=/usr/bin/gem
     with_items:
-    - facter
     - keen
     - dotenv
+  - name: run heartbeat
+    shell: /gorilla/heartbeat
