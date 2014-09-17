@@ -1,6 +1,8 @@
 ---
 - hosts: localhost
-- tasks:
+  user: root
+  connection: local
+  tasks:
   - name: get gems
     gem: name=facter state=present executable=/usr/bin/gem
     gem: name=keen state=present executable=/usr/bin/gem
