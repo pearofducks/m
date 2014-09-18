@@ -8,8 +8,9 @@ else
   exit 1
 fi
 
-easy_install pip
-pip install ansible
+sudo /usr/bin/easy_install pip
+sudo /usr/local/bin/pip install ansible
+sudo /usr/local/bin/pip install markupsafe
 
 rm /Library/LaunchDaemons/com.opera.intint.ansible_install.plist
 rm -rf /usr/local/ansible_install
