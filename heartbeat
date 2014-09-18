@@ -1,8 +1,8 @@
 #!/usr/bin/ruby
-gDir = File.expand_path "/gorilla"
+# gDir = File.expand_path "/gorilla"
 
-ENV['BUNDLE_GEMFILE'] ||= gDir + "/Gemfile"
-$:.unshift gDir
+# ENV['BUNDLE_GEMFILE'] ||= gDir + "/Gemfile"
+# $:.unshift gDir
 
 require 'bundler/setup'
 require "keen"
@@ -13,6 +13,7 @@ attributes = %w(fqdn id sp_machine_model processors sp_physical_memory sp_serial
 facts = {}
 
 Facter.each do |k,v|
+  puts "#{k} :: #{v}"
   if attributes.include? k
     facts[k] = v
   end

@@ -1,0 +1,17 @@
+#!/bin/sh
+
+TESTURL='http://google.com'
+
+if curl --output /dev/null --silent --head --fail "$TESTURL"; then
+  echo "URL exists: $TESTURL"
+else
+  exit 1
+fi
+
+easy_install pip
+pip install ansible
+
+rm /Library/LaunchDaemons/com.opera.intint.ansible_install.plist
+rm -rf /usr/local/ansible_install
+
+reboot
