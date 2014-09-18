@@ -19,3 +19,5 @@
       creates: /gorilla/gems
   - name: run heartbeat
     shell: /gorilla/heartbeat
+    environment:
+      GEM_HOME: /gorilla/bundler
