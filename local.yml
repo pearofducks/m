@@ -3,7 +3,7 @@
   connection: local
   tasks:
   - name: copy gorilla files
-    copy: src=./{{ item }} dest=/gorilla/heartbeat mode=0755
+    copy: src=./{{ item }} dest=/gorilla/{{ item }} mode=0755
     with_items:
     - Gemfile
     - heartbeat
