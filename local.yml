@@ -2,6 +2,8 @@
 - hosts: localhost
   connection: local
   tasks:
+  - name: make gorilla dir
+    shell: mkdir /gorilla creates=/gorilla
   - name: copy gorilla files
     copy: src=./{{ item }} dest=/gorilla/{{ item }} mode=0755
     with_items:
@@ -9,7 +11,7 @@
     - Gemfile.lock
     - heartbeat
   - name: install bundler
-    shell: gem install -i /gorilla/bundler bundler creates=/gorilla/bundler
+    shell: /usr/bin/gem install -i /gorilla/bundler bundler creates=/gorilla/bundler
   - name: bundle gems
     shell: /gorilla/bundler/bin/bundle install --binstubs --jobs 4 --deployment --path gems
     args:
