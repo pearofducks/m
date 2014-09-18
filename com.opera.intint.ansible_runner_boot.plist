@@ -3,7 +3,7 @@
 <plist version="1.0">
   <dict>
     <key>Label</key>
-    <string>com.opera.intint.ansible_install</string>
+    <string>com.opera.intint.ansible_runner_boot</string>
     <key>ProgramArguments</key>
     <array>
       <string>/usr/local/ansible_runner</string>
