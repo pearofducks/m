@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/usr/bin/ruby
 gDir = File.expand_path "/gorilla"
 
 ENV['BUNDLE_GEMFILE'] ||= gDir + "/Gemfile"
