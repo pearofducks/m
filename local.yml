@@ -8,6 +8,8 @@
     - Gemfile
     - Gemfile.lock
     - heartbeat
+  - name: install bundler
+    gem: name=bundler state=latest
   - name: bundle gems
     shell: bundle install --binstubs --jobs 4 --deployment --path gems
     args:
