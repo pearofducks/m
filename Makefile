@@ -7,6 +7,8 @@ REVERSE_DOMAIN=com.opera.intint
 PAYLOAD=\
 				pack-script\
 				pack-Library-LaunchDaemons-com.opera.intint.ansible_install.plist \
+				pack-Library-LaunchDaemons-com.opera.intint.ansible_runner.plist \
+				pack-Library-LaunchDaemons-com.opera.intint.ansible_runner_boot.plist \
     
 pack-script:
 	@sudo mkdir -p ${WORK_D}/usr/local/ansible_install

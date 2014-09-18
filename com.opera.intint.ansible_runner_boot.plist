@@ -6,7 +6,7 @@
     <string>com.opera.intint.ansible_install</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/usr/local/ansible_install/ansible_install</string>
+      <string>/usr/local/ansible_runner</string>
     </array>
     <key>RunAtLoad</key>
     <true/>

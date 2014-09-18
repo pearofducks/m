@@ -2,6 +2,8 @@
 - hosts: localhost
   connection: local
   tasks:
+  - name: remove first-boot runner
+    file: path=/Library/LaunchDaemons/com.opera.intint.ansible_runner_boot.plist state=absent
   - name: make gorilla dir
     shell: mkdir /gorilla creates=/gorilla
   - name: copy gorilla files
