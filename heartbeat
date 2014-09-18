@@ -1,5 +1,10 @@
 #!/usr/bin/env ruby
+gDir = File.expand_path "/gorilla"
 
+ENV['BUNDLE_GEMFILE'] ||= gDir + "/Gemfile"
+$:.unshift gDir
+
+require 'bundler/setup'
 require "keen"
 require "dotenv"
 
