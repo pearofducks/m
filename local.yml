@@ -9,9 +9,9 @@
     - Gemfile.lock
     - heartbeat
   - name: install bundler
-    gem: name=bundler state=latest
+    shell: gem install -i /gorilla/bundler bundler creates=/gorilla/bundler
   - name: bundle gems
-    shell: bundle install --binstubs --jobs 4 --deployment --path gems
+    shell: /gorilla/bundler/bin/bundle install --binstubs --jobs 4 --deployment --path gems
     args:
       chdir: /gorilla
       creates: /gorilla/gems
