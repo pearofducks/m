@@ -14,6 +14,8 @@
     shell: /usr/bin/gem install -i /gorilla/bundler bundler creates=/gorilla/bundler
   - name: bundle gems
     shell: /gorilla/bundler/bin/bundle install --binstubs --jobs 4 --deployment --path gems
+    environment:
+      GEM_HOME: /gorilla/bundler
     args:
       chdir: /gorilla
       creates: /gorilla/gems

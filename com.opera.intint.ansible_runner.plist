@@ -3,26 +3,19 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>local.IDENTIFIER_HERE.SOMETHING</string>
+    <string>com.opera.intint.ansible_runner</string>
     <key>OnDemand</key>
     <true/>
     <key>RunAtLoad</key>
     <false/>
-    <key>UserName</key>
-    <string>USERNAME HERE</string>
     <key>Program</key>
-    <string>/PATH/TO/SCRIPT</string>
-    <key>ProgramArguments</key>
-    <array>
-        <string>Argument_1</string>
-        <string>Argument_2</string>
-    </array>
+    <string>/usr/local/ansible_runner</string>
     <key>StartCalendarInterval</key>
     <dict>
         <key>Hour</key>
-        <integer>00</integer>
+        <integer>05</integer>
         <key>Minute</key>
-        <integer>03</integer>
+        <integer>00</integer>
     </dict>
 </dict>
 </plist>
