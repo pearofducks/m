@@ -1,24 +1,31 @@
 #!/usr/bin/env ruby
-gDir = File.expand_path "/gorilla"
+# gDir = File.expand_path "/gorilla"
 
-ENV['BUNDLE_GEMFILE'] ||= gDir + "/Gemfile"
-$:.unshift gDir
+# ENV['BUNDLE_GEMFILE'] ||= gDir + "/Gemfile"
+# $:.unshift gDir
 
 require 'bundler/setup'
 require "keen"
 require "dotenv"
+require "facter"
 
+attributes = %w(fqdn id sp_machine_model processors sp_physical_memory sp_serial_number sp_os_version sp_uptime ipaddress macaddress timezone)
+facts = {}
+
+Facter.each do |k,v|
+  if attributes.include? k
+    facts[k] = v
+  end
+end
+facts['disk'] = `df -h / | sed -n 2p`.strip
+
+puts facts
 # Dotenv.load
 
 # k = Keen::Client.new(
 #   project_id: ENV["PROJECT_ID"],
 #   write_key: ENV["WRITE_KEY"],
 # )
-
-facts = `ansible all -m setup -i localhost, -c local`
-f = File.open(Dir.home + "/foo","w")
-f.puts facts
-f.close
 
 # k.publish( :mac,
 #   {
