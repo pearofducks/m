@@ -6,6 +6,7 @@
     copy: src=./{{ item }} dest=/gorilla/{{ item }} mode=0755
     with_items:
     - Gemfile
+    - Gemfile.lock
     - heartbeat
   - name: bundle gems
     shell: bundle install --binstubs --jobs 4 --deployment --path gems
