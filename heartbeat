@@ -9,28 +9,22 @@ require "keen"
 require "dotenv"
 require "facter"
 
+Dotenv.load '/usr/local/.gorilla-env'
+
 # TODO check encryption
 attributes = %w(fqdn id sp_machine_model processors sp_physical_memory sp_serial_number sp_os_version sp_uptime ipaddress macaddress timezone)
 facts = {}
 
 Facter.each do |k,v|
-  puts "#{k} :: #{v}"
   if attributes.include? k
     facts[k] = v
   end
 end
 facts['disk'] = `df -h / | sed -n 2p`.strip
 
-puts facts
-# Dotenv.load
+k = Keen::Client.new(
+  project_id: ENV["PROJECT_ID"],
+  write_key: ENV["WRITE_KEY"],
+)
 
-# k = Keen::Client.new(
-#   project_id: ENV["PROJECT_ID"],
-#   write_key: ENV["WRITE_KEY"],
-# )
-
-# k.publish( :mac,
-#   {
-#   var: value,
-#   }
-# )
+k.publish :heartbeat, facts
